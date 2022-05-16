@@ -1,0 +1,20 @@
+﻿@page
+@model Web.Pages.CameraModel
+@{
+    ViewData["Title"] = "Camera";
+}
+<div class="text-center">
+    <h1 class="display-4">Camera</h1>
+
+    <button id="grabFrame">Grab Frame</button>
+    <button id="takePhoto">Take Photo</button>
+    <div class="select">
+        <label for="videoSource">Video source: </label><select id="videoSource"></select>
+    </div>
+    <input class="hidden" id="zoom" type="range" step="20">
+</div>
+
+<video autoplay playsinline class="hidden"></video>
+<img>
+<canvas class="hidden"></canvas>
+<script src="~/js/camera.js"></script>

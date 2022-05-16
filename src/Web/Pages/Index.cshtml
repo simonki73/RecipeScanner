@@ -1,0 +1,18 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Uploads";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Uploads</h1>
+ <p>Camera:</p>
+    <input type="file" accept="image/*" capture />
+
+    <p>Video:</p>
+    <input type="file" accept="video/*" capture />
+
+    <img class="hidden">
+    <video class="hidden" autoplay controls loop></video>
+</div>
+ <script src="~/js/mediaInput.js"></script>
