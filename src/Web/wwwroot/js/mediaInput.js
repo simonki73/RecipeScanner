@@ -34,18 +34,22 @@ function handleInput(inputEvent) {
         displayElement.classList.remove('hidden');
         try {
             var url = window.URL.createObjectURL(file);
-            displayElement.src = url;
+            displayElement.src = url;       
+            displayElement.className = "mx-auto d-block";
+            displayElement.width = 600;
             // window.URL.revokeObjectURL(url);
-        } catch (event) {
+        }
+        catch (event) {
             try {
                 var fileReader = new FileReader();
                 fileReader.onload = function (fileReaderEvent) {
+                    alert(e.target.result);
                     displayElement.src = fileReaderEvent.target.result;
                 };
                 fileReader.readAsDataURL(file);
-            } catch (error) {
-                console.log('Neither createObjectURL or FileReader are supported',
-                    error);
+            }
+            catch (error) {
+                console.log('Neither createObjectURL or FileReader are supported', error);
             }
         }
     }
